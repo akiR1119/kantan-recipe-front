@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useRef } from "react";
+// import SampleInput from "./SampleInput";
+import "./App.css";
 
 function App() {
+  const [input, setInput] = useState("default");
+
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const handleTestClick = () => {
+    setInput(inputRef.current!.value);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input className="input" type="text" ref={inputRef} />
+      <button className="button" onClick={handleTestClick}>
+        submit
+      </button>
+      <div className="show">{input}</div>
     </div>
   );
 }
