@@ -1,23 +1,33 @@
-import React, { useState, useRef } from "react";
-// import SampleInput from "./SampleInput";
+import React, { useState } from "react";
 import "./App.css";
+import SubmitRecipeModal from "./SubmitRecipeModal";
+import { Recipe } from "./Recipe";
 
 function App() {
-  const [input, setInput] = useState("default");
+  const [recipeList, setRecipeList] = useState([] as Recipe[]);
 
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  const handleTestClick = () => {
-    setInput(inputRef.current!.value);
+  const handleRecipeAdd = (newRecipe: Recipe, recipeList: Recipe[]) => {
+    console.log("handleRecipeAdd");
+    const newRecipeList = [...recipeList, newRecipe];
+    console.log(newRecipeList);
+    setRecipeList(newRecipeList);
   };
 
   return (
     <div className="App">
-      <input className="input" type="text" ref={inputRef} />
-      <button className="button" onClick={handleTestClick}>
-        submit
-      </button>
-      <div className="show">{input}</div>
+      <SubmitRecipeModal
+        recipeList={recipeList}
+        onRecipeAdd={handleRecipeAdd}
+      />
+      <div>
+        {recipeList.map((r) => {
+          if (r) {
+            return <div key={r.id}>{r.recipeName}</div>;
+          } else {
+            return <div>none</div>;
+          }
+        })}
+      </div>
     </div>
   );
 }
