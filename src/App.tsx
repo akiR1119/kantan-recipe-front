@@ -6,7 +6,7 @@ import { Recipe } from "./Recipe";
 function App() {
   const [recipeList, setRecipeList] = useState([] as Recipe[]);
 
-  const handleRecipeAdd = (newRecipe: Recipe, recipeList: Recipe[]) => {
+  const handleRecipeAdd = (newRecipe: Recipe) => {
     console.log("handleRecipeAdd");
     const newRecipeList = [...recipeList, newRecipe];
     console.log(newRecipeList);
