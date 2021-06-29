@@ -1,9 +1,7 @@
 import { useRef } from "react";
+import { Ingredient } from "./Ingredient";
+import IngredientsShow from "./IngredientsShow";
 
-type Ingredient = {
-  id: number;
-  name: string;
-};
 //材料追加ボタンを実装する。追加ボタンを押すと新しいフォームが出る。
 //削除ボタンを実装する。削除ボタンを押すとその材料は削除される。
 //追加ボタン、削除ボタンが押されるとingredientArrayが変更される。
@@ -17,13 +15,13 @@ type IngredientProps = {
 const IngredientRow = (props: IngredientProps) => {
   const ingredientRef = useRef<HTMLInputElement>(null);
 
-  const ingredients = props.ingredientArray.map((ing) => {
-    return (
-      <div className="ingredient-row" key={ing.id}>
-        {ing.name}
-      </div>
-    );
-  });
+  // const ingredients = props.ingredientArray.map((ing) => {
+  //   return (
+  //     <div className="ingredient-row" key={ing.id}>
+  //       {ing.name}
+  //     </div>
+  //   );
+  // });
 
   const AddIngredient = () => {
     const newIngredientName = ingredientRef.current!.value;
@@ -33,7 +31,7 @@ const IngredientRow = (props: IngredientProps) => {
   return (
     <div className="ingredient-area">
       材料：
-      {ingredients}
+      <IngredientsShow ingredientArray={props.ingredientArray} />
       <input
         type="text"
         name="ingredient-input"
