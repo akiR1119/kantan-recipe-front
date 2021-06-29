@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import IngredientRow from "./IngredientRow";
-import ProcessRow from "./ProcessRow";
+import ProcessRow from "./processRow";
 import SubmitButton from "./SubmitButton";
 
 import { Recipe } from "./Recipe";
