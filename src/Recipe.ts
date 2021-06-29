@@ -1,6 +1,9 @@
+import { Ingredient } from "./Ingredient";
+import { Process } from "./Process";
+
 export type Recipe = {
   id: number;
   recipeName: string;
-  ingredient: string[];
-  process: string[];
+  ingredient: Ingredient[];
+  process: Process[];
 };

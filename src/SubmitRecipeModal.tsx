@@ -23,12 +23,8 @@ const SubmitRecipeModal = (props: SubmitRecipeModalProps) => {
   const handleSubmitClick = () => {
     //submitが押されると、recipeの各要素を取得して整形し新しいrecipeを作る。新しいRecipeを渡してトップのhandleRecipeAddを起動する。そしてrecipeListに新しいrecipeを追加する処理を行う。
     const newRecipeName = recipeNameRef.current!.value;
-    const newIngredient = ingredientArray.map((i) => {
-      return i.name;
-    });
-    const newProcess = processArray.map((p) => {
-      return p.name;
-    });
+    const newIngredient = ingredientArray;
+    const newProcess = processArray;
     const newRecipe: Recipe = {
       id: Date.now(),
       recipeName: newRecipeName,
