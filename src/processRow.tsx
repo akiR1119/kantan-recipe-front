@@ -1,5 +1,7 @@
 import { useRef } from "react";
 
+import ProcessShow from "./ProcessShow";
+
 type Process = {
   id: number;
   name: string;
@@ -14,14 +16,6 @@ type ProcessProps = {
 const ProcessRow = (props: ProcessProps) => {
   const processRef = useRef<HTMLInputElement>(null);
 
-  const ingredients = props.processArray.map((pro) => {
-    return (
-      <div className="process-row" key={pro.id}>
-        {pro.name}
-      </div>
-    );
-  });
-
   const AddProcess = () => {
     const newProcessName = processRef.current!.value;
     props.AddProcess(newProcessName);
@@ -30,7 +24,7 @@ const ProcessRow = (props: ProcessProps) => {
   return (
     <div className="process-area">
       手順：
-      {ingredients}
+      <ProcessShow processArray={props.processArray} />
       <input
         type="text"
         name="process-input"

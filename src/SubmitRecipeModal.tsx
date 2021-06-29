@@ -1,21 +1,17 @@
 import React, { useState, useRef } from "react";
 import IngredientRow from "./IngredientRow";
-import ProcessRow from "./processRow";
-import { Ingredient } from "./Ingredient";
+import ProcessRow from "./ProcessRow";
 import SubmitButton from "./SubmitButton";
 
 import { Recipe } from "./Recipe";
+import { Ingredient } from "./Ingredient";
+import { Process } from "./Process";
 
 import "./modal.css";
 
 type SubmitRecipeModalProps = {
   recipeList: Recipe[];
   onRecipeAdd: (newRecipe: Recipe) => void;
-};
-
-type Process = {
-  id: number;
-  name: string;
 };
 
 const SubmitRecipeModal = (props: SubmitRecipeModalProps) => {
