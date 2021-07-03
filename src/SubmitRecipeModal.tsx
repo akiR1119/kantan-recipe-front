@@ -82,7 +82,7 @@ const SubmitRecipeModal = (props: SubmitRecipeModalProps) => {
   return (
     <div className="modal-kari">
       <p>もーだるがめん（仮）</p>
-      <div className="recipe-name">
+      <div className="recipe-name-area">
         <label htmlFor="recipe-name">レシピ名：</label>
         <input
           className="recipe-name-input"

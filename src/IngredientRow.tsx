@@ -32,15 +32,17 @@ const IngredientRow = (props: IngredientProps) => {
     <div className="ingredient-area">
       材料：
       <IngredientsShow ingredientArray={props.ingredientArray} />
-      <input
-        type="text"
-        name="ingredient-input"
-        className="ingredients-input"
-        placeholder="材料"
-        ref={ingredientRef}
-      />
-      <div className="ingredient-submit" onClick={AddIngredient}>
-        追加
+      <div className="ingredient-input-form">
+        <input
+          type="text"
+          name="ingredient-input"
+          className="ingredients-input"
+          placeholder="材料"
+          ref={ingredientRef}
+        />
+        <div className="ingredient-add" onClick={AddIngredient}>
+          追加
+        </div>
       </div>
     </div>
   );

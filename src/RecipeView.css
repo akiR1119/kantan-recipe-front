@@ -1,0 +1,45 @@
+.recipe-name-area {
+  border: 1px black dotted;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
+}
+.ingredient-area {
+  border: 1px black dotted;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.ingredient-input-form {
+  display: flex;
+  justify-content: center;
+  margin: 5px auto;
+}
+
+.ingredient-add {
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+.process-area {
+  border: 1px black dotted;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.process-input-form {
+  display: flex;
+  justify-content: center;
+  margin: 5px auto;
+}
+
+.process-add {
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+.recipe-view-area {
+  border: 1px black solid;
+  margin: 10% 20%;
+  max-width: 834px;
+}
