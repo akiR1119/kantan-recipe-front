@@ -1,4 +1,5 @@
 .modal-kari {
   border: 1px black solid;
-  margin: 10%;
+  margin: 10% 20%;
+  max-width: 834px;
 }

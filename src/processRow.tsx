@@ -25,15 +25,17 @@ const ProcessRow = (props: ProcessProps) => {
     <div className="process-area">
       手順：
       <ProcessShow processArray={props.processArray} />
-      <input
-        type="text"
-        name="process-input"
-        className="process-input"
-        placeholder="手順"
-        ref={processRef}
-      />
-      <div className="process-submit" onClick={AddProcess}>
-        追加
+      <div className="process-input-form">
+        <input
+          type="text"
+          name="process-input"
+          className="process-input"
+          placeholder="手順"
+          ref={processRef}
+        />
+        <div className="process-submit" onClick={AddProcess}>
+          追加
+        </div>
       </div>
     </div>
   );

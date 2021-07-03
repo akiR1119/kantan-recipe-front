@@ -5,6 +5,8 @@ import { Recipe } from "./Recipe";
 import IngredientsShow from "./IngredientsShow";
 import ProcessShow from "./ProcessShow";
 
+import "./RecipeView.css";
+
 function App() {
   const [recipeList, setRecipeList] = useState([] as Recipe[]);
 
@@ -25,10 +27,18 @@ function App() {
         {recipeList.map((r) => {
           if (r) {
             return (
-              <div>
-                <div key={r.id}>{r.recipeName}</div>
-                <IngredientsShow ingredientArray={r.ingredient} />
-                <ProcessShow processArray={r.process} />
+              <div className="recipe-view-area">
+                <div className="recipe-name-area" key={r.id}>
+                  レシピ名：{r.recipeName}
+                </div>
+                <div className="ingredient-area">
+                  材料一覧：
+                  <IngredientsShow ingredientArray={r.ingredient} />
+                </div>
+                <div className="process-area">
+                  手順一覧：
+                  <ProcessShow processArray={r.process} />
+                </div>
               </div>
             );
           } else {
