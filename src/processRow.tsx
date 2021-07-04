@@ -33,7 +33,7 @@ const ProcessRow = (props: ProcessProps) => {
           placeholder="手順"
           ref={processRef}
         />
-        <div className="process-submit" onClick={AddProcess}>
+        <div className="process-add" onClick={AddProcess}>
           追加
         </div>
       </div>
